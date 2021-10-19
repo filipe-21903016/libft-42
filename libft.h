@@ -24,5 +24,6 @@ char    *ft_strchr(const char *s, int c);
 char    *ft_strrchr(const char *s, int c);
 void    *ft_memset(void *s, int c, size_t n);
 void    *ft_calloc(size_t nmemb, size_t size);
+void    *ft_memchr(const void *s, int c, size_t n);
 
 #endif
