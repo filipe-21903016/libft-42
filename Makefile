@@ -8,7 +8,8 @@ SRCS = ft_strlen.c ft_atoi.c \
 	   ft_isascii.c ft_isprint.c ft_strdup.c \
 	   ft_tolower.c ft_toupper.c ft_strcpy.c \
 	   ft_strncpy.c ft_strcat.c ft_strncat.c \
-	   ft_strlcpy.c ft_strlcat.c
+	   ft_strlcpy.c ft_strlcat.c ft_strchr.c \
+	   ft_strrchr.c ft_memset.c
 
 OBJS = $(SRCS:.c=.o)
 RM = rm -f
