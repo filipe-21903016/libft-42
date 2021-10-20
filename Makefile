@@ -17,6 +17,7 @@ OBJS = $(SRCS:.c=.o)
 RM = rm -f
 INCLUDES = libft.h
 
+
 .c.o:
 	$(CC) $(CFLAGS) -c $(SRCS)
 
@@ -24,6 +25,10 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 all: $(NAME)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
