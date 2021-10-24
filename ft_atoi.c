@@ -9,25 +9,25 @@ int	is_number(char c)
 	return (c >= '0' && c <= '9');
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	sign;
 	int	result;
 
 	sign = 1;
 	result = 0;
-	while (is_space(*str))
-		str++;
-	if (*str == '-' || *str == '+')
+	while (is_space(*nptr))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		if (*str == '-')
+		if (*nptr == '-')
 			sign *= -1;
-		str++;
+		nptr++;
 	}
-	while (is_number(*str))
+	while (is_number(*nptr))
 	{
-		result = (result * 10) + (*str - '0');
-		str++;
+		result = (result * 10) + (*nptr - '0');
+		nptr++;
 	}
 	return (sign * result);
 }
