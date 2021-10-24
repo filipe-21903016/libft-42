@@ -10,6 +10,8 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     ptr2 = (unsigned char *) s2;
     i = 0;
 
+    if (n == (size_t) 0)
+        return (0);
     while (*(ptr1 + i) == *(ptr2 + i) && i < n - 1)
         i++;
     return (*(ptr1 + i) - *(ptr2 + i));
