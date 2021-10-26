@@ -17,7 +17,6 @@ OBJS = $(SRCS:.c=.o)
 RM = rm -f
 INCLUDES = libft.h
 
-
 .c.o:
 	$(CC) $(CFLAGS) -c $(SRCS)
 
