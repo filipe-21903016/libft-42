@@ -1,5 +1,17 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/26 12:48:14 by fzarco-l          #+#    #+#             */
+/*   Updated: 2021/10/26 12:48:15 by fzarco-l         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+#include <string.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -15,5 +27,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		dst[i] = '\0';
 	}
-	return ((size_t) ft_strlen(src));
+	return ((size_t)ft_strlen(src));
 }

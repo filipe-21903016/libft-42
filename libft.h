@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/26 14:15:14 by fzarco-l          #+#    #+#             */
+/*   Updated: 2021/10/26 14:15:36 by fzarco-l         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
-#define LIBFT_H
-#include <string.h>
+# define LIBFT_H
+# include <string.h>
+# include <stdlib.h>
 
 int		ft_strlen(const char *str);
 int		ft_atoi(const char *nptr);
