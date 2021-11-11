@@ -6,7 +6,7 @@
 /*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 15:11:14 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/11 15:11:15 by fzarco-l         ###   ########.fr       */
+/*   Updated: 2021/11/11 15:49:56 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!str)
 		return (NULL);
 	ft_strcpy(str, s1);
-	ft_strcat(str,s2);
+	ft_strcat(str, s2);
 	return (str);
 }

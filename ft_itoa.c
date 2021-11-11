@@ -6,16 +6,16 @@
 /*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 15:08:00 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/11 15:08:03 by fzarco-l         ###   ########.fr       */
+/*   Updated: 2021/11/11 15:47:15 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int get_len(int n)
+int	get_len(int n)
 {
-	int	len;
+	int				len;
 	unsigned int	nb;
 
 	len = 0;
@@ -36,10 +36,10 @@ int get_len(int n)
 char	*reverse(char **str)
 {
 	char	*p_str;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	temp;
-	
+
 	p_str = *str;
 	i = 0;
 	j = ft_strlen(*str) - 1;
@@ -54,13 +54,12 @@ char	*reverse(char **str)
 	return (p_str);
 }
 
-
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char	*str;
-	char	*p_str;
+	char			*str;
+	char			*p_str;
 	unsigned int	nb;
-	
+
 	if (n == 0)
 		return (strdup("0"));
 	nb = n;
@@ -76,7 +75,7 @@ char *ft_itoa(int n)
 	while (nb)
 	{
 		*p_str++ = (nb % 10) + '0';
-		nb /= 10;	
+		nb /= 10;
 	}
 	*p_str = '\0';
 	return (reverse(&str));
