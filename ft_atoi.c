@@ -6,7 +6,7 @@
 /*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 12:44:41 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/10/26 13:03:23 by fzarco-l         ###   ########.fr       */
+/*   Updated: 2021/11/11 19:02:29 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ int	ft_atoi(const char *nptr)
 	result = 0;
 	while (is_space(*nptr))
 		nptr++;
-	if (*nptr == '-' || *nptr == '+')
+	if ((*nptr == '-' || *nptr == '+') && *nptr)
 	{
 		if (*nptr == '-')
 			sign *= -1;
 		nptr++;
 	}
-	while (is_number(*nptr))
+	while (is_number(*nptr) && *nptr)
 	{
 		result = (result * 10) + (*nptr - '0');
 		nptr++;
