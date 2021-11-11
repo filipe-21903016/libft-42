@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 15:11:14 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/11 15:11:15 by fzarco-l         ###   ########.fr       */
+/*   Created: 2021/11/11 15:10:17 by fzarco-l          #+#    #+#             */
+/*   Updated: 2021/11/11 15:44:36 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	total_bytes;
-	char	*str;
-
-	if (!s1 && !s2)
-		return (NULL);
-	total_bytes = 1 + ft_strlen(s1) + ft_strlen(s2);
-	str = malloc(sizeof(char) * total_bytes);
-	if (!str)
-		return (NULL);
-	ft_strcpy(str, s1);
-	ft_strcat(str,s2);
-	return (str);
+	ft_putstr_fd(ft_itoa(n), fd);
 }
