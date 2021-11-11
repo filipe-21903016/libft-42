@@ -6,7 +6,7 @@
 /*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 12:49:57 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/11 18:54:35 by fzarco-l         ###   ########.fr       */
+/*   Updated: 2021/11/11 19:06:28 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	true_len;
-	
+
 	if (s == NULL)
-		return ( NULL );
+		return (NULL);
 	if ((unsigned int)ft_strlen(s) < start || len < 1)
 		return (ft_strdup(""));
 	true_len = len;
