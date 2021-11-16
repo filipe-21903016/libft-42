@@ -3,71 +3,78 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fzarco-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 15:02:23 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/11 16:04:43 by fzarco-l         ###   ########.fr       */
+/*   Created: 2021/11/16 12:28:43 by fzarco-l          #+#    #+#             */
+/*   Updated: 2021/11/16 12:41:50 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h" 
 
-int	count_words(char *s, char c)
+int	is_sep(char c, char sep)
+{
+	return (c == sep);
+}
+
+int	count_words(const char *str, char sep)
 {
 	int	words;
 
 	words = 0;
-	while (*s != '\0')
+	while (*str)
 	{
-		if (*s != c)
+		while (*str && is_sep(*str, sep))
+			str++;
+		if (*str && !is_sep(*str, sep))
 		{
 			words++;
-			while (*s != '\0' && *s != c)
-			s++;
+			while (*str && !is_sep(*str, sep))
+				str++;
 		}
-		else
-			s++;
 	}
 	return (words);
 }
 
-char	*make_word(char *s, char c)
+char	*allocate_word(const char *str, char sep)
 {
-	int		len;
-	char	*p_s;
+	int		i;
 	char	*word;
 
-	p_s = s;
-	len = 0;
-	while (*p_s && *p_s++ != c)
-		len++;
-	word = malloc(sizeof(char) * len + 1);
-	if (!word)
-		return (NULL);
-	ft_strncpy(word, s, len);
+	i = 0;
+	while (str[i] != '\0' && !is_sep(str[i], sep))
+		i++;
+	word = (char *) malloc((i + 1) * sizeof(char));
+	i = 0;
+	while (str[i] != '\0' && !is_sep(str[i], sep))
+	{
+		word[i] = str[i];
+		i++;
+	}
+	word[i] = '\0';
 	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**words;
-	char	**p_words;
+	char	**args;
+	int		i;
+	const char	*str;
 
-	words = malloc(sizeof(char *) * (count_words((char *) s, c) + 1));
-	if (!words)
-		return (NULL);
-	p_words = words;
-	while (*s != '\0')
+	str = (const char *) s;
+	args = (char **) malloc((count_words(str, c) + 1) * sizeof(char *));
+	i = 0;
+	while (*str)
 	{
-		if (*s != c)
+		while (*str && is_sep(*str, c))
+			str++;
+		if (*str && !is_sep(*str, c))
 		{
-			*p_words++ = make_word((char *)s, c);
-			while (*s != '\0' && *s != c)
-				s++;
+			args[i++] = allocate_word(str, c);
+			while (*str && !is_sep(*str, c))
+				str++;
 		}
-		else
-			s++;
-	}	
-	p_words = NULL;
-	return (words);
+	}
+	args[i] = NULL;
+	return (args);
 }

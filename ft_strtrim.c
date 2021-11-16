@@ -6,7 +6,7 @@
 /*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 15:03:20 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/11 15:39:44 by fzarco-l         ###   ########.fr       */
+/*   Updated: 2021/11/16 12:22:51 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 	char	*str;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
+	if (ft_strlen(set) == 0)
+		return (ft_strdup(s1));
 	start = 0;
 	last = ft_strlen(s1) - 1;
 	while (find_char(s1[start], (char *)set) && start < last)
