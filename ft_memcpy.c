@@ -6,7 +6,7 @@
 /*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 12:47:36 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/10/26 14:14:26 by fzarco-l         ###   ########.fr       */
+/*   Updated: 2021/11/16 16:23:08 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*p_dest;
 	unsigned char	*p_src;
 
-	if (dest == NULL || src == NULL)
+	if (dest == NULL && src == NULL)
 		return (NULL);
 	p_dest = (unsigned char *)dest;
 	p_src = (unsigned char *)src;
