@@ -6,7 +6,7 @@
 /*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 12:48:38 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/16 16:15:31 by fzarco-l         ###   ########.fr       */
+/*   Updated: 2021/11/16 16:48:24 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	int				i;
 	unsigned char	*p_s1;
 	unsigned char	*p_s2;
 

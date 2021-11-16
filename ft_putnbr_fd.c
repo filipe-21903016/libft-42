@@ -6,7 +6,7 @@
 /*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 15:10:17 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/16 15:54:11 by fzarco-l         ###   ########.fr       */
+/*   Updated: 2021/11/16 16:47:28 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	ft_putnbr(int nb)
 		c--;
 	}
 }
+
 void	ft_putnbr_fd(int n, int fd)
 {
 	char			str[10];

@@ -6,7 +6,7 @@
 /*   By: fzarco-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:28:43 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/16 12:41:50 by fzarco-l         ###   ########.fr       */
+/*   Updated: 2021/11/16 16:47:56 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,16 @@ char	*allocate_word(const char *str, char sep)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**args;
-	int		i;
+	char		**args;
+	int			i;
 	const char	*str;
 
+	if (!s)
+		return (NULL);
 	str = (const char *) s;
 	args = (char **) malloc((count_words(str, c) + 1) * sizeof(char *));
+	if (!args)
+		return (NULL);
 	i = 0;
 	while (*str)
 	{
