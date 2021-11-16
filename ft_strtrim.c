@@ -3,48 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fzarco-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 15:03:20 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/16 12:22:51 by fzarco-l         ###   ########.fr       */
+/*   Created: 2021/11/16 15:09:20 by fzarco-l          #+#    #+#             */
+/*   Updated: 2021/11/16 15:19:13 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	find_char(char c, char *set)
-{
-	while (*set)
-	{
-		if (c == *set++)
-			return (1);
-	}
-	return (0);
-}
 
-char	*ft_strtrim(char const *s1, char const *set)
+
+char	*ft_strtrim(char const *s, char const *set)
 {
-	int		start;
-	int		last;
-	int		len;
 	char	*str;
+	int		i;
+	int		j;
+	int		len;
 
-	if (!s1 || !set)
+	i = 0;
+	j = 0;
+	len = ft_strlen(s) - 1;
+	while (ft_strchr(set,s[i]))
+		i++;
+	while (ft_strchr(set, s[len - j]))
+		j++;
+	if (i == 0 && j == 0)
+	{
+		str = ft_strdup(s);
+		return (str);
+	}
+	if (i == len + 1)
+	{
+		str = ft_strdup("");
+		return (str);
+	}
+	if (!(str = ft_substr(s, i, len - j - i + 1)))
 		return (NULL);
-	if (ft_strlen(set) == 0)
-		return (ft_strdup(s1));
-	start = 0;
-	last = ft_strlen(s1) - 1;
-	while (find_char(s1[start], (char *)set) && start < last)
-		start++;
-	while (find_char(s1[last], (char *)set) && last > 0)
-		last--;
-	len = last - start + 1;
-	if (len <= 0)
-		return (ft_strdup(""));
-	str = malloc(len * sizeof(char) + 1);
-	if (!str)
-		return (NULL);
-	ft_strncpy(str, s1 + start, len);
 	return (str);
 }
+
