@@ -6,7 +6,7 @@
 /*   By: fzarco-l <fzarco-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 15:08:00 by fzarco-l          #+#    #+#             */
-/*   Updated: 2021/11/11 15:47:15 by fzarco-l         ###   ########.fr       */
+/*   Updated: 2021/11/17 15:54:14 by fzarco-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*ft_itoa(int n)
 	unsigned int	nb;
 
 	if (n == 0)
-		return (strdup("0"));
+		return (ft_strdup("0"));
 	nb = n;
 	str = malloc(sizeof(char) * get_len(nb) + 1);
 	if (!str)
